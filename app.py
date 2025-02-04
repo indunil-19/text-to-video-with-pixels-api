@@ -13,12 +13,12 @@ from utility.video.video_search_query_generator import getVideoSearchQueriesTime
 import argparse
 import time
 
+
 VIDEO_SERVER = "pexel"
 OUTPUT_FOLDER = "generate_videos"
 os.makedirs(OUTPUT_FOLDER, exist_ok=True)
 
-def generate_videos(topics):
-    for topic in topics:
+def generate_videos(topic):
         print(f"Generating video for topic: {topic}")
         
         SAMPLE_FILE_NAME = f"{topic.replace(' ', '_')}_audio_tts.wav"
