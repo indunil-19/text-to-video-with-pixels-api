@@ -18,7 +18,7 @@ VIDEO_SERVER = "pexel"
 OUTPUT_FOLDER = "generate_videos"
 os.makedirs(OUTPUT_FOLDER, exist_ok=True)
 
-def generate_videos(topic):
+async def generate_videos(topic):
         print(f"Generating video for topic: {topic}")
         
         SAMPLE_FILE_NAME = f"{topic.replace(' ', '_')}_audio_tts.wav"
@@ -28,7 +28,7 @@ def generate_videos(topic):
         print(f"Script for {topic}: {response}")
         
         # Generate audio
-        asyncio.run(generate_audio(response, SAMPLE_FILE_NAME))
+        await generate_audio(response, SAMPLE_FILE_NAME)
         
         # Generate captions
         timed_captions = generate_timed_captions(SAMPLE_FILE_NAME)
